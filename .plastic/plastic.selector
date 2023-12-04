@@ -1,0 +1,4 @@
+repository "Proximity-chat-game@orange8846@cloud"
+  path "/"
+    br "/main"
+    co "/main"
