@@ -23,4 +23,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel("Game");
     }
+
+    public void Quit()
+    {
+      Application.Quit();
+    }
 }
