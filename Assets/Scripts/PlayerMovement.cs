@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (view.IsMine)
         {
+            if (!GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenuLogic>().isActive) { 
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(move * speed * Time.deltaTime);
         }
-    
+        }
+
     }
 }
