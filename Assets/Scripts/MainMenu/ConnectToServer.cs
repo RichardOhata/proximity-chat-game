@@ -5,6 +5,9 @@ using Photon.Pun;
 using UnityEngine.SceneManagement;
 public class ConnecToServer : MonoBehaviourPunCallbacks
 {
+
+    public GameObject LoadingMenu;
+    public GameObject MainMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +16,15 @@ public class ConnecToServer : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
+        Debug.Log("Connected to Master");
         PhotonNetwork.JoinLobby();
     }
 
-    // Gets called after JoinLobby
+    // Callback for Joining Lobby 
     public override void OnJoinedLobby()
     {
-        SceneManager.LoadScene("Lobby");
+        Debug.Log("Joined Lobby");
+        LoadingMenu.SetActive(false);   
+        MainMenu.SetActive(true);
     }
 }

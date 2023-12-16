@@ -32,6 +32,6 @@ public class PauseMenuLogic : MonoBehaviourPunCallbacks
     public override void OnLeftRoom()
     {
         Debug.Log("Left the room");
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("MainMenu");
     }
 }
