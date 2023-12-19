@@ -59,7 +59,6 @@ public class PlayerPickUpLogic : MonoBehaviour
                 {
                     inHandItem.transform.SetParent(null);
                     inHandItem = null;
-                    hit.collider.GetComponent<Highlight>().isPickedUp = false;
                     Rigidbody rb = hit.collider.GetComponent<Rigidbody>();
                     if (rb != null)
                     {
@@ -85,7 +84,6 @@ public class PlayerPickUpLogic : MonoBehaviour
                 inHandItem.transform.position = Vector3.zero;
                 inHandItem.transform.rotation = Quaternion.identity;
                 inHandItem.transform.SetParent(pickUpParent.transform, false);
-                hit.collider.GetComponent<Highlight>().isPickedUp = true;
                 if (rb != null)
                 {
                     rb.isKinematic = true;

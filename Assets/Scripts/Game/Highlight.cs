@@ -14,8 +14,6 @@ public class Highlight : MonoBehaviour
     //helper list to cache all the materials ofd this object
     private List<Material> materials;
 
-    public bool isPickedUp = false;
-
     //Gets all the materials from each renderer
     private void Awake()
     {
