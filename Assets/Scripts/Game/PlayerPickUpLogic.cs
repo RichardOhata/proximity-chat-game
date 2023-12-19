@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class PlayerPickUpLogic : MonoBehaviour
 {
     [SerializeField]
@@ -28,9 +28,19 @@ public class PlayerPickUpLogic : MonoBehaviour
 
     private RaycastHit hit;
 
+    PhotonView view;
+
+    private void Start()
+    {
+        view = GetComponent<PhotonView>();
+    }
+
     private void Update()
     {
+        if (view.IsMine)
+        {
 
+    
         Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * hitRange, Color.red);
         if (hit.collider != null)
         {
@@ -82,6 +92,7 @@ public class PlayerPickUpLogic : MonoBehaviour
                 }
                 return;
             }
+        }
         }
     }
 }

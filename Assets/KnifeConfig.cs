@@ -14,7 +14,7 @@ public class KnifeConfig : MonoBehaviour
     {
         if (highlight.isPickedUp)
         {         
-                transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+             //   transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         }
     }
 }

@@ -6,6 +6,8 @@ public class SpawnPlayer : MonoBehaviour
 {
 
     public GameObject playerPrefab;
+    public GameObject banana;
+    public GameObject knife;
 
     public float minX;
     public float maxX;
@@ -18,5 +20,7 @@ public class SpawnPlayer : MonoBehaviour
     {
         Vector3 randomPosition = new Vector3(Random.Range(minX, maxX), yValue, Random.Range(minZ, maxZ));
         PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
+        PhotonNetwork.Instantiate(knife.name, randomPosition, Quaternion.identity);
+        PhotonNetwork.Instantiate(banana.name, randomPosition, Quaternion.identity);
     }
 }
